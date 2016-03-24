@@ -1,26 +1,30 @@
 # sanelogging
 
-## Sane defaults for python logging
+## Sane Defaults for Python Logging
 
 The python stdlib `logging` module is useful, flexible, and configurable.
 
-However, the maintainers reasonably have determined that python is an
+However, the maintainers have (quite reasonably) determined that python is an
 application runtime and not an application.  The default configuration
-for the `logging` is not very useful, and this results in boilerplate.
+for the `logging` is thus not very useful, and this commonly results in 
+boilerplate in your own programs.
 
 This is an opinionated module for the 90% case where you just want sane
-defaults.  (In effect, moving the boilerplate into PyPI.)
+defaults without that boilerplate.  (In effect, moving it into PyPI.)
 
-# Other Stuff
+# It Also Does Some Other Stuff
 
-There are some convenience methods added, such as `panic` and `die` (c.f.
-golang and perl).
+* There are some convenience methods added, such as `panic` and `die` (c.f.
+  golang and perl).
 
-`notice` is additionally aliased to `info`, for those who forget that python
-doesn't have a notice level (i.e. me).
+* `notice` is aliased to `info`, for those who forget that python
+  doesn't have a notice level (i.e. me).
 
-If you set the environment variable `LOG_TO_SYSLOG`, it will print out your
-log messages on paper and mail them to you.
+* If you set the environment variable `LOG_TO_SYSLOG`, it will print out your
+  log messages on paper and mail them to you.
+
+* If stdout is a tty, log messages will be color-coded using the `colorlog`
+  module.
 
 # Usage
 
