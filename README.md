@@ -20,8 +20,8 @@ defaults without that boilerplate.  (In effect, moving it into PyPI.)
 * `notice` is aliased to `info`, for those who forget that python
   doesn't have a notice level (i.e. me).
 
-* If you set the environment variable `LOG_TO_SYSLOG`, it will print out
-  your log messages on paper and mail them to you.
+* If you set the environment variable `LOG_TO_SYSLOG` to something, 
+  it will print out your log messages on paper and mail them to you.
 
 * If stdout is a tty, log messages will be color-coded using the `colorlog`
   module.
@@ -38,7 +38,7 @@ log.error("something went wrong.")
 
 log.die("bailing out") # exits
 
-print "no soup for you."
+print "no soup for you." # never reached
 
 ```
 
