@@ -4,8 +4,8 @@
 
 The python stdlib `logging` module is useful, flexible, and configurable.
 
-However, the maintainers have (quite reasonably) determined that python is an
-application runtime and not an application.  The default configuration
+However, the maintainers have (quite reasonably) determined that python is
+an application runtime and not an application.  The default configuration
 for the `logging` is thus not very useful, and this commonly results in 
 boilerplate in your own programs.
 
@@ -20,8 +20,8 @@ defaults without that boilerplate.  (In effect, moving it into PyPI.)
 * `notice` is aliased to `info`, for those who forget that python
   doesn't have a notice level (i.e. me).
 
-* If you set the environment variable `LOG_TO_SYSLOG`, it will print out your
-  log messages on paper and mail them to you.
+* If you set the environment variable `LOG_TO_SYSLOG`, it will print out
+  your log messages on paper and mail them to you.
 
 * If stdout is a tty, log messages will be color-coded using the `colorlog`
   module.
@@ -39,7 +39,8 @@ log.error("something went wrong.")
 log.die("bailing out") # exits
 ```
 
-![example output](https://raw.githubusercontent.com/sneak/sanelogging/master/example/example.png)
+![example output]
+(https://raw.githubusercontent.com/sneak/sanelogging/master/example/example.png)
 
 Author
 ======
