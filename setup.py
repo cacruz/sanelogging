@@ -1,15 +1,14 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='sanelogging',
-    version='1.0.0',
+    version='1.0.1',
     author='Jeffrey Paul',
-    author_email='sneak@datavibe.net',
+    author_email='sneak@sneak.berlin',
     packages=['sanelogging'],
-    url='http://pypi.python.org/pypi/sanelogging/',
-    license='LICENSE.txt',
+    url='https://github.com/sneak/sanelogging/',
+    license='Public Domain',
     description='Python logging for humans',
-    long_description=open('README.md').read(),
     install_requires=[
         "colorlog",
     ],

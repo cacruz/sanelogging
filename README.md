@@ -24,25 +24,27 @@ log messages on paper and mail them to you.
 
 # Usage
 
-```
+```python
+
 from sanelogging import log
 
 log.info("starting up!")
 
 log.error("something went wrong.")
 
-log.die("bailing out") # script exits
-
+log.die("bailing out") # exits
 ```
 
 Author
 ======
 
-Jeffrey Paul <(sneak@sneak.berlin)[mailto:sneak@sneak.berlin]>
+Jeffrey Paul <sneak@sneak.berlin>
 
-(https://sneak.berlin)[https://sneak.berlin]
+https://sneak.berlin
 
-(@sneakdotberlin)[https://twitter.com/sneakdotberlin]
+[@sneakdotberlin](https://twitter.com/sneakdotberlin)
+
+`5539 AD00 DE4C 42F3 AFE1  1575 0524 43F4 DF2A 55C2`
 
 License
 =======
