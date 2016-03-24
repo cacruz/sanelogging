@@ -45,7 +45,7 @@ log.die("bailing out") # exits
 Author
 ======
 
-Jeffrey Paul <sneak@sneak.berlin>
+Jeffrey Paul &lt;sneak@sneak.berlin&gt;
 
 https://sneak.berlin
 
