@@ -42,8 +42,7 @@ print "no soup for you." # never reached
 
 ```
 
-![example output]
-(https://raw.githubusercontent.com/sneak/sanelogging/master/example/example.png)
+![example output](https://raw.githubusercontent.com/sneak/sanelogging/master/example/example.png)
 
 Author
 ======
