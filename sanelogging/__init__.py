@@ -2,7 +2,11 @@
 #234567891123456789212345678931234567894123456789512345678961234567897123456789
 # encoding: utf-8
 
+
+from pytz import reference
+import time
 import colorlog
+import datetime
 import logging
 import os
 import sys
@@ -16,18 +20,33 @@ ch = logging.StreamHandler() # defaults to sys.stderr
 
 log.addHandler(ch)
 
-formatstr = '%(asctime)s [%(levelname)-.4s] %(message)s'
+
+formatstr = '%(asctime)s.%(msecs)03d [%(levelname)-.4s] %(message)s'
+datefmt = '%Y-%m-%dT%H:%M:%S'
+
+localtime = reference.LocalTimezone()
+if localtime.tzname(datetime.datetime.now()) == 'UTC':
+    # UTC time, just append Z
+    formatstr = '%(asctime)s.%(msecs)03dZ [%(levelname)-.4s] %(message)s'
+else:
+    # not UTC, append offset of local system time
+    minute = (time.localtime().tm_gmtoff / 60) % 60
+    hour = ((time.localtime().tm_gmtoff / 60) - minute) / 60
+    utcoffset = "%.2d%.2d" %(hour, minute)
+    if utcoffset[0] != '-':
+        utcoffset = '+' + utcoffset
+    formatstr = '%(asctime)s.%(msecs)03d' + utcoffset + ' [%(levelname)-.4s] %(message)s'
+
 colorFormatter = colorlog.ColoredFormatter(
-    '%(log_color)s' + formatstr
+    fmt='%(log_color)s' + formatstr, datefmt=datefmt
 )
 
 formatter = logging.Formatter(
-    formatstr
+    fmt=formatstr,
+    datefmt=datefmt
 )
 
-
 log.notice = log.info
-
 
 if sys.stdout.isatty():
     ch.setFormatter(colorFormatter)
@@ -39,7 +58,7 @@ if os.environ.get('LOG_TO_SYSLOG',False):
 
     # default to UDP if no socket found
     address = ('localhost', 514)
-   
+
     from logging.handlers import SysLogHandler
 
     locations = [

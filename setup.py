@@ -11,5 +11,7 @@ setup(
     description='Python logging for humans',
     install_requires=[
         "colorlog",
+        "pytz",
+        "datetime"
     ],
 )

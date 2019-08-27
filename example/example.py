@@ -8,4 +8,4 @@ log.error("something went wrong.")
 
 log.die("bailing out") # exits
 
-print "no soup for you."
+print("no soup for you.")
