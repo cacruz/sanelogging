@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sanelogging',
-    version='1.0.1',
+    version='1.1.0',
     author='Jeffrey Paul',
     author_email='sneak@sneak.berlin',
     packages=['sanelogging'],
